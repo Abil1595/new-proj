@@ -18,11 +18,10 @@ body {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Ensures the header stays in one line */
 }
 
 .logo {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,16 +46,14 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 36px;
+  gap: 20px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .nav-links li {
   font-size: 16px;
   font-weight: 600;
   color: #031924;
-  font-family: 'Hellix', sans-serif;
   cursor: pointer;
 }
 
@@ -90,8 +87,6 @@ body {
 .text-section {
   max-width: 485px;
   flex: 1;
-  padding-left: 
-  20px;
   text-align: left;
 }
 
@@ -100,7 +95,6 @@ body {
   height: auto;
   display: block;
   padding-top: 50px;
-
 }
 
 .content1 {
@@ -120,7 +114,6 @@ body {
   color: #fff;
   font-weight: 700;
   font-size: 16px;
-  line-height: 21px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -138,75 +131,44 @@ p {
   margin-bottom: 20px;
 }
 
-/* Responsive Design */
-
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px 30px;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    padding: 10px 20px;
   }
 
   .logo {
-    width: 100px;
+    width: 80px;
+    height: 60px;
   }
 
   .nav-links {
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
   }
 
-  .content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .text-section {
-    max-width: 100%;
-  }
-
-  .content1 {
-    font-size: 36px;
-    line-height: 44px;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: 26px;
-  }
-}
-
-@media (max-width: 768px) {
-  .content1 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .buttonnew {
-    width: 160px;
-    height: 44px;
-    font-size: 14px;
+  .nav-button {
+    width: auto;
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    padding: 10px 20px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: nowrap; 
+    padding: 10px;
   }
 
   .logo {
-    width: 80px;
+    width: 60px;
+    height: 50px;
+  }
+
+  .nav-links {
+    flex: 1;
+    justify-content: flex-end; 
+    gap: 10px;
   }
 
   .content1 {
